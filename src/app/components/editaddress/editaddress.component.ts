@@ -45,7 +45,7 @@ export class EditaddressComponent implements OnInit {
    district: new FormControl('', [Validators.required]),
     zipcode: new FormControl('', [Validators.required]),
   //  fname: new FormControl('', [Validators.required]),
-  telno: new FormControl('', [Validators.required]),
+  telno: new FormControl('', [Validators.required])
   })
 
 
