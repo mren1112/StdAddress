@@ -1,0 +1,23 @@
+main {
+
+  width: 95%;
+  text-align: center;
+}
+
+body {
+  background-color: blanchedalmond;
+
+}
+
+.headerlabel {
+  font-weight: bold;
+  background-color: rgb(245, 182, 100);
+  padding: 5px;
+  width: 116px;
+}
+
+.headercontent {
+  background-color: rgb(253, 230, 200);
+  padding: 8px;
+  width: 200px;
+}

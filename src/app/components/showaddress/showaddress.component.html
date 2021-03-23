@@ -1,0 +1,149 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+  integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+
+<body>
+  <app-header></app-header>
+  <div class="container p-4">
+    <div class="row">
+      <div class="col-md-12">
+        <form>
+          <mat-card class="cardstyle">
+            <mat-card-header>
+              <div mat-card-avatar></div>
+              <mat-card-title><i class="fa fa-user"></i> ข้อมูลที่อยู่นักศึกษา. </mat-card-title>
+              <mat-card-subtitle>Showe address detail.</mat-card-subtitle>
+            </mat-card-header>
+            <div mat-card-image></div>
+            <mat-card-content>
+
+              <div class="row" style="margin-left: 4%;">
+                <div class="col-md-6" >
+                  <label class="label headerlabel"><i class="fa fa-id-card" style="color:#576574;"></i>  รหัสนักศึกษา: </label>
+                  <font class="headercontent">&nbsp; </font>
+                  <input type="text" class="form-control" value="{{stdcode}}" readonly>
+                  <p></p>
+                  <label class="label headerlabel"><i class="fa fa-user-circle" style="color:#576574;"></i> ชื่อ - สกุล: </label>
+                  <font class="headercontent">&nbsp;</font>
+                  <input type="text" class="form-control" value="{{todolist.NameThai}}" readonly>
+                </div>
+                <div class="col-md-6">
+                  <label class="label headerlabel"><i class="fa fa-child" style="color:#576574;"></i> สาขา: </label>
+                  <font class="headercontent">&nbsp;</font>
+                  <input type="text" class="form-control" value="{{todolist.MajorNameThai}}" readonly>
+                  <p></p>
+                  <label class="label headerlabel"><i class="fa fa-address-book-o" style="color:#576574;"></i> คณะ: </label>
+                  <font class="headercontent">&nbsp;</font>
+                  <input type="text" class="form-control" value="{{todolist.FacNameThai}}" readonly>
+                </div>
+              </div>
+              <div class="row" style="margin-left: 4%;">
+                <div class="col-md-12">
+                  <hr><br>
+                  <h2> <i class="fa fa-address-card" aria-hidden="true" style="color:#576574;"></i> ที่อยู่ตามบัตรประชาชน
+                  </h2>
+                </div>
+              </div>
+              <ng-container *ngFor="let i of todoOldAddress;">
+              <div class="row" style="margin-left: 4%; margin-top: 2%;">
+                <div class="col-4">
+                  <mat-label style="font-weight: bold; margin-right: 3%;"><i class="fa fa-address-card" aria-hidden="true" style="color:#576574;"></i> ที่อยู่ : </mat-label>
+                  <label for="">{{i.oldaddress}} </label><br><hr>
+                </div>
+                <div class="col-4">
+                  <mat-label style="font-weight: bold; margin-right: 3%;"><i class="fa fa-street-view" style="color:#576574;"></i> ถนน : </mat-label>
+                  <label for="">{{i.oldroad}} </label><br><hr>
+                </div>
+                <div class="col-4">
+                  <mat-label style="font-weight: bold; margin-right: 3%;"><i class="fa fa-map-pin" style="color:#576574;"></i> ตำบล : </mat-label>
+                  <label for="">{{i.oldarea}} </label><br><hr>
+                </div>
+              </div>
+              <div class="row" style="margin-left: 4%;">
+                <div class="col-4">
+                  <mat-label style="font-weight: bold; margin-right: 3%;"><i class="fa fa-share-square" style="color:#576574;"></i> เขต/อำเภอ : </mat-label>
+                  <label for="">{{i.olddistrict}} </label><br><hr>
+                </div>
+                <div class="col-4">
+                  <mat-label style="font-weight: bold; margin-right: 3%;"><i class="fa fa-flag" style="color:#576574;"></i> จังหวัด : </mat-label>
+                  <label for="">{{i.oldprovincename}} </label><br><hr>
+                </div>
+                <div class="col-4">
+                  <mat-label style="font-weight: bold; margin-right: 3%;"><i class="fa fa-envelope" style="color:#576574;"></i> รหัสไปรษณีย์ : </mat-label>
+                  <label for="">{{i.oldpostcode}} </label><br><hr>
+                </div>
+              </div>
+              <div class="row" style="margin-left: 4%; margin-top: 3%;">
+                <div class="col-md-12">
+                  <h2><i class="fa fa-comments"></i> ข้อมูลการติดต่อ </h2>
+                </div>
+              </div>
+              <div class="row" style="margin-left: 4%; ">
+                <div class="col-5">
+                  <mat-label style="font-weight: bold;"><i class="fa fa-phone-square" style="color:#576574;"></i> เบอร์โทรศัพท์ที่สามารถติดต่อได้ : </mat-label>
+                 <label for="">{{i.oldmobileno}}</label> <br> <hr>
+
+                </div>
+                <div class="col-6">
+                  <mat-label style="font-weight: bold;"><i class="fa fa-envelope-open-o" style="color:#576574;"></i> E-mail : &nbsp; </mat-label>
+                  <label for="">{{i.oldemail}}</label><br><hr>
+                </div>
+              </div>
+              <div class="row" style="margin-left: 4%; margin-top: 1%;">
+                <div class="col-12">
+
+                </div>
+              </div>
+            </ng-container>>
+              <div class="row rowpadding">
+                <div class="col-md-6">
+                </div>
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-3">
+                </div>
+              </div>
+              <div class="row cardpadding">
+                <div class="col-md-12" style="margin-top: 2%; text-align: center;">
+                </div>
+              </div>
+              <div class="row cardpadding">
+                <div class="col-md-12" style="margin-top: 2%; text-align: center;">
+                  <button *ngIf="checkbutton" class="btn btn-success" type="submit" style="margin-right: 2%;"
+                    (click)="editaddress()">
+                    <i class="fa fa-edit"></i> แก้ไขข้อมูลที่อยู่</button>
+                  <button *ngIf="!checkbutton" class="btn btn-primary" type="submit" style="margin-right: 2%;"
+                    routerLink="/stdregis">
+                    <i class="fa fa-plus"></i> เพิ่มที่อยู่</button>
+                  <button class="btn btn-danger" (click)="backhome()">
+                    <i class="fa fa-backward"></i> ยกเลิก</button>
+                </div>
+              </div>
+
+              <div class="row cardpadding">
+                <div class="col-md-12">&nbsp;</div>
+              </div>
+
+            </mat-card-content>
+            <mat-card-actions>
+
+              <!-- Icon
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>-->
+
+            </mat-card-actions>
+          </mat-card>
+        </form>
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <div *ngIf="showSpinner" class="spinner"></div>
+  <div *ngIf="showSpinner" class="txtspinner">loading...</div>
+
+
+</body>

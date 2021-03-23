@@ -1,0 +1,208 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+  integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<body>
+  <app-header></app-header>
+  <ng-container style="margin-top: 5%;">
+    <div class="row">
+      <div>
+        &nbsp;
+
+      </div>
+    </div>
+  </ng-container>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div>
+          <form [formGroup]="detailinput" (ngSubmit)="onSubmit()">
+          <mat-card>
+          </mat-card>
+          <mat-card>
+            <mat-card-header>
+              <div mat-card-avatar></div>
+              <mat-card-title><h1><i class="fa fa-address-card-o"></i> แบบฟอร์มบันทึกข้อมูล</h1> <br></mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+
+                <!--div class="row" style="margin-left: 4%;">
+                  <div class="col-md-6">
+                    <label class="label headerlabel"><i class="fa fa-id-card"></i>  รหัสนักศึกษา: </label> <font class="headercontent">{{stdcode}} </font><p></p>
+                    <label class="label headerlabel"><i class="fa fa-user-circle"></i> ชื่อ - สกุล: </label> <font class="headercontent">{{todolist.NameThai}}</font>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="label headerlabel" ><i class="fa fa-child"></i> สาขา: </label> <font class="headercontent">{{todolist.MajorNameThai}}</font> <p></p>
+                    <label class="label headerlabel"><i class="fa fa-address-book-o"></i> คณะ: </label> <font class="headercontent">{{todolist.FacNameThai}}</font>
+                  </div>
+                </div -->
+
+                <!-- header-->
+                <div class="row" style="margin-left: 4%;">
+                  <div class="col-md-6" >
+                    <label class="label headerlabel"><i class="fa fa-id-card" style="color:#576574;"></i>  รหัสนักศึกษา: </label>
+                    <font class="headercontent">&nbsp; </font>
+                    <input type="text" class="form-control" value="{{stdcode}}" readonly>
+                    <p></p>
+                    <label class="label headerlabel"><i class="fa fa-user-circle" style="color:#576574;"></i> ชื่อ - สกุล: </label>
+                    <font class="headercontent">&nbsp;</font>
+                    <input type="text" class="form-control" value="{{todolist.NameThai}}" readonly>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="label headerlabel"><i class="fa fa-child" style="color:#576574;"></i> สาขา: </label>
+                    <font class="headercontent">&nbsp;</font>
+                    <input type="text" class="form-control" value="{{todolist.MajorNameThai}}" readonly>
+                    <p></p>
+                    <label class="label headerlabel"><i class="fa fa-address-book-o" style="color:#576574;"></i> คณะ: </label>
+                    <font class="headercontent">&nbsp;</font>
+                    <input type="text" class="form-control" value="{{todolist.FacNameThai}}" readonly>
+                  </div>
+                </div>
+                <!-- end header-->
+
+                <div class="row" style="margin-left: 4%;">
+                  <div class="col-12">
+                      <hr><br><h3>ที่อยู่ที่ปรากฎในบัตรประชาชน <font style="color: red;">*</font> </h3>
+                  </div>
+                </div>
+                <div class="row" style="margin-left: 4%;">
+                  <div class="col-12">
+                    <div class="display-block">
+                      <mat-label><i class="fa fa-address-card" aria-hidden="true" style="color:#576574;"></i> ที่อยู่<font style="color: red;">*</font></mat-label>
+                      <input type="text" class="form-control"  formControlName="address"  name="address" placeholder="กรุณาป้อนที่อยู่">
+                      <div *ngIf="detailinput.controls['address'].touched && detailinput.controls['address'].invalid" class="alert-danger">
+                        <div *ngIf="detailinput.controls['address'].errors && detailinput.controls['address'].errors.required" style="color: red;"> Address is required.</div>
+                      </div>
+                  </div>
+                </div>
+                </div>
+                <div class="row" style="margin-left: 4%; margin-top: 3%;">
+                  <div class="col-4">
+                    <div class="display-block">
+                      <mat-label><i class="fa fa-street-view" style="color:#576574;"></i> ถนน<font style="color: red;">*</font></mat-label>
+                      <input class="form-control" type="text" formControlName="street"  name="street" placeholder="ถนน">
+                      <div *ngIf="detailinput.controls['street'].touched && detailinput.controls['street'].invalid" class="alert-danger">
+                        <div *ngIf="detailinput.controls['street'].errors && detailinput.controls['street'].errors.required" style="color: red;"> Street is required.</div>
+                      </div>
+                  </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="display-block">
+                      <mat-label><i class="fa fa-map-pin" style="color:#576574;"></i> จังหวัด<font style="color: red;">*</font></mat-label>
+                      <mat-select class="form-control" formControlName="province" name="province" placeholder="จังหวัด">
+                        <mat-option>None</mat-option>
+                        <mat-option *ngFor="let birthyear of birthyear" [value]="birthyear">{{birthyear}}</mat-option>
+                      </mat-select>
+                      <div *ngIf="detailinput.controls['province'].touched && detailinput.controls['province'].invalid" class="alert-danger">
+                        <div *ngIf="detailinput.controls['province'].errors && detailinput.controls['province'].errors.required" style="color: red;"> Street is required.</div>
+                      </div>
+
+                  </div>
+                </div>
+                <div class="col-4">
+                    <mat-label><i class="fa fa-share-square" style="color:#576574;"></i> เขต/อำเภอ<font style="color: red;">*</font></mat-label>
+                    <mat-select class="form-control" formControlName="state"  name="state" placeholder="เขต/อำเภอ">
+                      <mat-option>None</mat-option>
+                      <mat-option *ngFor="let birthyear of birthyear" [value]="birthyear">{{birthyear}}</mat-option>
+                    </mat-select>
+                    <div *ngIf="detailinput.controls['state'].touched && detailinput.controls['state'].invalid" class="alert-danger">
+                      <div *ngIf="detailinput.controls['state'].errors && detailinput.controls['state'].errors.required" style="color: red;"> Street is required.</div>
+                    </div>
+
+                 </div>
+                </div>
+                <div class="row" style="margin-left: 4%; margin-top: 3%;">
+                  <div class="col-4">
+                    <mat-label><i class="fa fa-flag" style="color:#576574;"></i> ตำบล<font style="color: red;">*</font></mat-label>
+                      <mat-select class="form-control" formControlName="district"  name="district" placeholder="ตำบล">
+                      <mat-option>None</mat-option>
+                      <mat-option *ngFor="let birthyear of birthyear" [value]="birthyear">{{birthyear}}</mat-option>
+                    </mat-select>
+                    <div *ngIf="detailinput.controls['district'].touched && detailinput.controls['district'].invalid" class="alert-danger">
+                      <div *ngIf="detailinput.controls['district'].errors && detailinput.controls['district'].errors.required" style="color: red;"> Street is required.</div>
+                    </div>
+
+                  </div>
+                  <div class="col-4">
+                      <mat-label><i class="fa fa-envelope" style="color:#576574;"></i> รหัสไปรษณีย์<font style="color: red;">*</font></mat-label>
+                      <mat-select class="form-control" formControlName="zipcode"  name="zipcode" placeholder="รหัสไปรษณีย์">
+                        <mat-option>None</mat-option>
+                        <mat-option *ngFor="let birthyear of birthyear" [value]="birthyear">{{birthyear}}</mat-option>
+                      </mat-select>
+                      <div *ngIf="detailinput.controls['zipcode'].touched && detailinput.controls['zipcode'].invalid" class="alert-danger">
+                        <div *ngIf="detailinput.controls['zipcode'].errors && detailinput.controls['zipcode'].errors.required" style="color: red;"> Street is required.</div>
+                      </div>
+
+                </div>
+                <div class="col-4">
+                   &nbsp;
+                 </div>
+                </div>
+                <div class="row" style="margin-left: 4%; margin-top: 3%;">
+                  <div class="col-12">
+                    <h2>ข้อมูลการติดต่อ <font style="color: red;">*</font> </h2>
+                  </div>
+                </div>
+                <div class="row" style="margin-left: 4%; ">
+                  <div class="col-6">
+                    <mat-label><i class="fa fa-phone-square" style="color:#576574;"></i> เบอร์โทรศัพท์ที่สามารถติดต่อได้<font style="color: red;">*</font></mat-label>
+                      <input class="form-control" formControlName="telno"  type="text" name="telno" placeholder="0x-xxxxxxxx">
+                      <div *ngIf="detailinput.controls['telno'].touched && detailinput.controls['telno'].invalid" class="alert-danger">
+                        <div *ngIf="detailinput.controls['telno'].errors && detailinput.controls['telno'].errors.required" style="color: red;"> Street is required.</div>
+                      </div>
+                  </div>
+
+                <div class="col-6">
+                  <mat-label style="font-weight: bold;"><i class="fa fa-envelope-open-o" style="color:#576574;"></i> E-mail : &nbsp; </mat-label>
+                  <input class="form-control" formControlName="email"  type="text" name="email" placeholder="email@example.com">
+                </div>
+                </div>
+                <div class="row" style="margin-left: 4%; margin-top: 1%;">
+                  <div class="col-12">
+                      <hr>
+                  </div>
+                </div>
+
+                <!-- div class="row" style="margin-left: 4%; margin-top: 1%;">
+                  <div class="col-12">
+                    <h2>สำรองข้อมูลการติดต่อ  </h2>
+                  </div>
+                </div>
+                <div class="row" style="margin-left: 4%; ">
+                  <div class="col-6">
+                    <mat-label>ชื่อ - สกุล บุคคลที่สามารถติดต่อได้<font style="color: red;">*</font></mat-label>
+                      <input class="form-control" formControlName="fname"  type="text" name="fname" placeholder="ชื่อ - สกุล">
+                  </div>
+                  <div class="col-4">
+                    <mat-label>เบอร์โทรศัพท์ที่สามารถติดต่อได้<font style="color: red;">*</font></mat-label>
+                      <input class="form-control" formControlName="telnosub"  type="text" name="telnosub" placeholder="0x-xxxxxxxx">
+
+                  </div>
+                </div -->
+
+
+                <div class="row" style="margin-left: 4%; margin-top: 2%;">
+                  <div class="col-12">
+                      <hr><br>
+                   </div>
+                </div>
+             </mat-card-content>
+            <mat-card-actions>
+              <div class="row">
+                <div class="col-6" style="text-align: right;">
+              <button class="btn btn-primary"><i class="fa fa-save"></i> บันทึกข้อมูล</button>
+                </div><div class="col-6" style="text-align: left;">
+                  <button class="btn btn-danger" (click)="backhome()"><i class="fa fa-close"> ยกเลิก </i></button>
+                    </div>
+              </div>
+              <p></p>
+            </mat-card-actions>
+          </mat-card>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>

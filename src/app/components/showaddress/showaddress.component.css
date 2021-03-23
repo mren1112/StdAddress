@@ -1,0 +1,93 @@
+body {
+  background-color: blanchedalmond;
+
+}
+
+main {
+
+  width: 95%;
+  text-align: center;
+}
+
+.cardpadding {
+  margin-left: 4%;
+
+}
+
+.rowpadding {
+  margin-left: 4%;
+  margin-top: 3%;
+
+}
+
+.buttonCustom {
+  border-radius: 10px;
+  background-color: #fdcb6e;
+  border: 0.7em;
+  width: 200px;
+  height: 180px;
+  transition: transform .2s;
+  /* Animation */
+
+  -webkit-box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.3);
+}
+
+.buttonCustom:hover {
+  transform: scale(1.12);
+  /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.cardstyle {
+  -webkit-box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.3);
+
+}
+
+.headerlabel {
+  font-weight: bold;
+  background-color: rgb(245, 182, 100);
+  padding: 5px;
+  width: 116px;
+}
+
+.headercontent {
+  background-color: rgb(253, 230, 200);
+  padding: 8px;
+  width: 200px;
+}
+
+
+
+.spinner {
+  border: 16px solid silver;
+  border-top: 16px solid #3c6382;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 500ms linear infinite;
+  top: 30%;
+  left: 50%;
+  position: absolute;
+  z-index: 99 !important;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg)
+  }
+
+  100% {
+    transform: rotate(-360deg)
+  }
+}
+
+
+.txtspinner {
+  top: 45%;
+  left: 50%;
+  position: absolute;
+  ;
+}

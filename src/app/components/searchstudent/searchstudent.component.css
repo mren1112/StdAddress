@@ -1,0 +1,46 @@
+body {
+  background-color: blanchedalmond;
+
+}
+
+main {
+
+  width: 95%;
+  text-align: center;
+}
+
+.cardpadding {
+  margin-left: 4%;
+
+}
+
+.buttonCustom {
+  border-radius: 10px;
+  background-color: #fdcb6e;
+  border: 0.7em;
+  width: 200px;
+  height: 180px;
+  transition: transform .2s;
+  /* Animation */
+
+  -webkit-box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.3);
+}
+
+.buttonCustom:hover {
+  transform: scale(1.12);
+  /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.cardstyle {
+  -webkit-box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.3);
+
+}
+
+.buttonclose  {
+  background-color: #fc3b00;
+  color: rgb(255, 255, 255);
+}

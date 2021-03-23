@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+  integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+
+<body>
+  <app-header></app-header>
+  <div class="container p-4">
+    <div class="row">
+      <div class="col-12">
+        <mat-card class="cardstyle">
+          <mat-card-header>
+            <div mat-card-avatar></div>
+            <mat-card-title>Main menu</mat-card-title>
+            <mat-card-subtitle>หน้าจัดการหลัก</mat-card-subtitle>
+          </mat-card-header>
+          <div mat-card-image></div>
+          <mat-card-content>
+            <div class="row cardpadding">
+              <div class="col-md-6">
+                &nbsp;
+              </div>
+            </div>
+
+            <div class="row cardpadding" style="padding-top: 2%;">
+              <div class="col-md-6">
+                <button  mat-raised-button  class="btn button buttonCustom" (click)="gotoShowAdrress()" >
+                  <i class="fa fa-id-card" style="color: whitesmoke; font-size: 100px; text-shadow: 2px 2px 4px #b4b1b1;"></i>
+                  <p style="padding-top: 5%;"><font style=" font-size: 15px; text-shadow: 2px 2px 4px #5f5f5f;">จัดการข้อมูลที่อยู่นักศึกษา</font> </p></button>
+
+              </div>
+            </div>
+
+          </mat-card-content>
+          <mat-card-actions style="text-align: center; margin-top: 4%; margin-bottom: 3%;">
+
+            <!-- Icon
+            <button mat-button>LIKE</button>
+            <button  class="btn buttonclose">SHARE</button>-->
+
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+
+</body>

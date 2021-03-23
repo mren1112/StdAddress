@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+  integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+
+<body>
+  <app-header></app-header>
+  <div class="container p-4">
+    <div class="row">
+      <div class="col-md-12">
+        <form [formGroup]="stdinput" (ngSubmit)="onSubmit()">
+          <mat-card class="cardstyle">
+            <mat-card-header>
+              <div mat-card-avatar></div>
+              <mat-card-title>ค้นหาข้อมูลที่อยู่นักศึกษา.
+              </mat-card-title>
+              <mat-card-subtitle>search</mat-card-subtitle>
+            </mat-card-header>
+            <div mat-card-image></div>
+            <mat-card-content>
+              <div class="row cardpadding">
+                <div class="col-md-1"></div>
+                <div class="col-md-4" style="margin-top: 2%;">
+                  <div class="">
+                    <div class="display-block">
+                      <input type="number" class="form-control" formControlName="stdcode" id="stdcode" name="stdcode" min="0" max="10" maxlength="10" integer
+                      [(ngModel)]="mstdcode" placeholder="รหัสนักศึกษา">
+                      <div *ngIf="stdinput.controls['stdcode'].touched && stdinput.controls['stdcode'].invalid"
+                        class="alert-danger">
+                        <div *ngIf="stdinput.controls['stdcode'].errors && stdinput.controls['stdcode'].errors.required"
+                          style="color: red;">
+                          Student code is required.</div>
+                      </div>
+                    </div>
+
+                    <div class="input-group-append">
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-5" style="margin-top: 2%;">
+                  <button class="btn btn-primary" type="submit" style="margin-right: 2%;">
+                    <i class="fa fa-search"></i> ค้นข้อมูล</button>
+                  <button class="btn buttonclose" (click)="backhome()">
+                    <i class="fa fa-backward"></i> ยกเลิก</button></div>
+              </div>
+
+              <div class="row cardpadding">
+                <div class="col-md-1"></div>
+                <div class="col-md-11"  style="margin-top: 2%;">
+                  <h2 style="color: red;">{{warningmsg}} </h2>
+                </div>
+              </div>
+
+            </mat-card-content>
+            <mat-card-actions>
+
+              <!-- Icon
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>-->
+
+            </mat-card-actions>
+          </mat-card>
+        </form>
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+
+</body>

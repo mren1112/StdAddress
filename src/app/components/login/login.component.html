@@ -1,0 +1,58 @@
+<html>
+
+<body>
+
+
+  <main>
+    <ng-container style="margin-top: 20%;">
+      <div class="wrapper ">
+        <div id="formContent">
+          <!-- Tabs Titles -->
+          <h2 class="active"> Sign In </h2>
+          <h2 class="inactive underlineHover" [routerLink]="['/register']" routerLinkActive="router-link-active">Sign Up
+          </h2>
+
+          <!-- Icon -->
+
+          <!-- Login Form -->
+          <form [formGroup]="profieinput" (ngSubmit)="onSubmit()">
+            <div class="display-block">
+            <input type="text" formControlName="user" [(ngModel)]="mUser" id="login" name="user" placeholder="@rumail.ru.ac.th">
+            <div *ngIf="profieinput.controls['user'].touched && profieinput.controls['user'].invalid" >
+              <div *ngIf="profieinput.controls['user'].errors && profieinput.controls['user'].errors.required" style="color: red;">
+                Email is required.</div>
+            </div>
+          </div>
+
+            <input type="password" formControlName="password" [(ngModel)]="mPassword" id="password" name="password" placeholder="password">
+              <div *ngIf="profieinput.controls['password'].touched && profieinput.controls['password'].invalid" >
+              <div *ngIf="profieinput.controls['password'].errors && profieinput.controls['password'].errors.required" style="color: red;">
+              password is required.</div>
+          </div>
+
+            <p></p>
+            <div style="font-size: 12px;">
+              <label for="">กรุณากรอก Email(@ru.ac.th) และรหัสผ่าน <br>
+                <font style="color: red;">กรุณาตรวจสอบ Email ให้ถูกต้องก่อนทำการเข้าสู่ระบบ</font>
+              </label>
+            </div>
+            <p></p>
+            <input type="submit" value="Log In" (click)="checkLogin()" [disabled]="!profieinput.valid">
+            <!--button type="submit"[disabled]="profieinput.valid">Submit</button -->
+            <button routerLink="main">Submit</button>
+          </form>
+
+          <!-- Remind Register -->
+          <div id="formFooter">
+            <!--a class="underlineHover" href="#">Register?</a -->
+          </div>
+
+        </div>
+      </div>
+
+    </ng-container>
+
+  </main>
+</body>
+
+</html>

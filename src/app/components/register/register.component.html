@@ -1,0 +1,57 @@
+<html>
+
+<body>
+
+  <main>
+    <ng-container style="margin-top: 20%;">
+      <div class="wrapper ">
+        <div id="formContent">
+          <!-- Tabs Titles -->
+          <h2 class="inactive underlineHover" [routerLink]="['/']"> Sign In </h2>
+          <h2 class="active">Sign Up </h2>
+
+          <!-- Login Form -->
+          <form>
+            <input type="email" [(ngModel)]="mEmail" [ngModelOptions]="{standalone: true}" id="email" name="email" (ngModelChange)="checkRegister()"
+              placeholder="ramkhamhaeng@ru.ac.th" ngModel email>
+            <p></p>
+            <div style="font-size: 12px;">
+              <label for="">กรุณากรอก Email(@rumail.ac.th) <br>
+                <font style="color: red;">กรุณาตรวจสอบ Email ให้ถูกต้องก่อนทำการลงทะเบียน</font>
+              </label>
+            </div>
+            <p></p>
+            <input type="text" [(ngModel)]="mCaptcha" [ngModelOptions]="{standalone: true}" id="captcha" name="captcha" (ngModelChange)="checkRegister()"
+              placeholder="******">
+            <p></p>
+            <div style="font-size: 12px;" *ngIf="msgerr">
+              <label for="">
+                <font style="color: red;">**ท่านกรอกข้อมูลไม่ถูกต้อง</font>
+              </label>
+            </div>
+            <div style="font-size: 16px;">
+              <label for="">
+                <font>กรุณากรอกตัวเลขที่เห็น</font> &nbsp; <b>{{mRandom}} </b>
+              </label>
+            </div>
+            <p></p>
+            <button mat-raised-button color="primary" [disabled]="mCheckDisable" (click)="register()">Register Now</button> &nbsp;
+            <button mat-raised-button color="warn" (click)="reSetForm()">Cancle</button>
+            <p></p>
+            <!--input type="button" [attr.disabled]="mCheckDisable" value="Register Now" (click)="register()"-->
+          </form>
+
+          <!-- Remind Register -->
+          <div id="formFooter">
+            <!--a class="underlineHover" href="#">Register?</a -->
+          </div>
+
+        </div>
+      </div>
+
+    </ng-container>
+
+  </main>
+</body>
+
+</html>
